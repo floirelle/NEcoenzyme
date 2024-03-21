@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+.hero-bg {
+  height: 1200px;
+  object-fit: cover;
+  object-position: 50% -100px;
+}
+
+.img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.category-item-img {
+  object-fit: cover;
+  object-position: 50% 50%;
+  transition: transform 0.5s;
+}
+
+.category-item-container {
+  height: 300px;
+}
+
+@media screen and (min-width: 1024px){
+  .category-item-container {
+    height: 600px;
+  }
+}
+
+.category-item-container:hover .category-item-img {
+  transform: scale(1.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
